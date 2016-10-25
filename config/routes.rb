@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   get "product/:permalink", to: "products#show", as: "product"
   post "product/:permalink", to: "products#buy", as: "buy"
-  root to: "products#index"
 
   delete "basket", to: "orders#destroy"
   get "basket", to: "orders#show"
