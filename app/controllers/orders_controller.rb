@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_filter(only: [:paypal, :payment]) { Shoppe::Paypal.setup_paypal }
+
   def checkout
     @order = Shoppe::Order.find(current_order.id)
   end
@@ -12,6 +14,11 @@ class OrdersController < ApplicationController
     end
   end
 
+  def destroy
+    @order = Shoppe::Order.find(current_order.id).destroy
+    redirect_to basket_path
+  end
+
   def confirmation
     if request.post?
       current_order.confirm!
@@ -21,8 +28,17 @@ class OrdersController < ApplicationController
   end
 
   def payment
+    if params[:success] == "true" && params[:PayerID].present?
+      @order.accept_paypal_payment(params[:paymentId], params[:token], params[:PayerID])
+    end
     if request.post?
       redirect_to checkout_confirmation_path
     end
+  end
+
+  def paypal
+    @order = Shoppe::Order.find(session[:current_order_id])
+    url = @order.redirect_to_paypal(checkout_payment_url(success: true), checkout_payment_url(success: false))
+    redirect_to url
   end
 end
