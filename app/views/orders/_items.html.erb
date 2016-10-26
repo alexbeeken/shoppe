@@ -33,15 +33,23 @@
   <tfoot>
     <tr>
       <td colspan='4'>Sub-Total</td>
-      <td><%= number_to_currency order.total_before_tax %></td>
+      <td>
+        <%= number_to_currency order.total_before_tax %>
+      </td>
     </tr>
     <tr>
       <td colspan='4'>Tax</td>
-      <td><%= number_to_currency order.tax %></td>
+      <td>
+        <%= number_to_currency order.tax %>
+      </td>
     </tr>
     <tr>
       <td colspan='4'>Total</td>
-      <td><%= number_to_currency order.total %></td>
+      <td>
+        <font class="greenmoney">
+          <%= number_to_currency order.total %>
+        </font>
+      </td>
     </tr>
   </tfoot>
 </table>

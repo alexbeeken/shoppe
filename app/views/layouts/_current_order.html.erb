@@ -1,7 +1,28 @@
-<p style="border:1px solid black;padding:10px;">
+<!-- <p style="border:1px solid black;padding:10px;">
   You have <%= pluralize current_order.total_items, 'item'%> in your basket which cost
   <%= number_to_currency current_order.total_before_tax %>.
   <%= link_to "View basket", basket_path %>
   <%= flash[:notice] %>
   <%= link_to "Checkout", checkout_path %>
-</p>
+</p> -->
+
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+    <font class="greenmoney">
+      <%= number_to_currency current_order.total %>
+    </font>
+    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+    </li>
+    <li role="separator" class="divider"></li>
+    <li>
+      <%= link_to "View Cart", basket_path %>
+    </li>
+    <li>
+      <%= link_to "Checkout", checkout_path %>
+    </li>
+  </ul>
+</li>

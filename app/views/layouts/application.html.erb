@@ -8,9 +8,6 @@
 </head>
 <body>
   <%= render 'layouts/nav_menu', current_order: current_order %>
-  <% if current_order %>
-    <%= render 'layouts/current_order', current_order: current_order %>
-  <% end %>
 
 <%= yield %>
 
