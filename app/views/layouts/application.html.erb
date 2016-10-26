@@ -7,9 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="banner">
-    <%= link_to image_tag('banner.png', border: 0), root_path %>
-  </div>
   <%= render 'layouts/nav_menu', current_order: current_order %>
 
 <%= yield %>
