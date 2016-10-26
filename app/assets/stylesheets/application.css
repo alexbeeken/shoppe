@@ -37,3 +37,7 @@
 .navbar-right {
   height: 100%;
 }
+
+.product-bubble {
+  height: 360px;
+}

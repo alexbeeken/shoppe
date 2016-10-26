@@ -1,22 +1,19 @@
-<h2>Products</h2>
-
-<% @products.each do |category, products| %>
-  <div class="container-fluid">
-    <h3><%= category.name %></h3>
-    <% products.each_with_index do |product, index| %>
-      <% if index % 3 == index+1 %>
-        <div class="row">
-          <div class="col-md-4">
-      <% else %>
-          <div class="col-md-4">
-      <% end %>
+<div class="container-fluid">
+  <% @products.each_with_index do |product, index| %>
+    <% if index % 4 == index+1 %>
+      <div class="row">
+        <div class="col-md-3">
+    <% else %>
+        <div class="col-md-3">
+    <% end %>
+          <div class="jumbotron product-bubble">
             <h4><%= link_to product.name, product_path(product.permalink) %></h4>
             <p><%= product.short_description %></p>
             <p><b>Price:</b> <%= number_to_currency product.price %></p>
           </div>
-      <% if index % 3 == index+1 %>
         </div>
-      <% end %>
+    <% if index % 4 == index+1 %>
+      </div>
     <% end %>
-  </div>
-<% end %>
+  <% end %>
+</div>
