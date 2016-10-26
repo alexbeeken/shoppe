@@ -1,0 +1,7 @@
+<div class="row">
+  <% row.each do |product| %>
+    <div class="col-md-3">
+      <%= render 'products/product_preview', product: product %>
+    </div>
+  <% end %>
+</div>

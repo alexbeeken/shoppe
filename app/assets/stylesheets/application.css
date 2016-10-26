@@ -39,5 +39,10 @@
 }
 
 .product-bubble {
+  text-align: center;
   height: 360px;
+}
+
+.product-image img {
+  max-height: 200px;
 }

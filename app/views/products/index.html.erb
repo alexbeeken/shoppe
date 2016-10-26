@@ -1,19 +1,6 @@
 <div class="container-fluid">
-  <% @products.each_with_index do |product, index| %>
-    <% if index % 4 == index+1 %>
-      <div class="row">
-        <div class="col-md-3">
-    <% else %>
-        <div class="col-md-3">
-    <% end %>
-          <div class="jumbotron product-bubble">
-            <h4><%= link_to product.name, product_path(product.permalink) %></h4>
-            <p><%= product.short_description %></p>
-            <p><b>Price:</b> <%= number_to_currency product.price %></p>
-          </div>
-        </div>
-    <% if index % 4 == index+1 %>
-      </div>
-    <% end %>
+  <% @products.each_slice(4) do |row| %>
+    <%= render 'products/product_row', row: row %>
   <% end %>
+  </div>
 </div>
