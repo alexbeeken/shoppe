@@ -1,3 +1,5 @@
 <h2>Your basket</h2>
-<%= render 'items', :order => current_order %>
-<p><%= link_to 'Empty basket', basket_path, :method => :delete %></p>
+<div class='container-fluid'>
+  <%= render 'items', :order => current_order %>
+  <p><%= button_to 'Empty basket', basket_path, :method => :delete, class: 'btn btn-primary' %></p>
+</div>
