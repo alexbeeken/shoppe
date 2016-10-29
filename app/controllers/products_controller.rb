@@ -10,8 +10,9 @@ class ProductsController < ApplicationController
   def buy
     begin
       @product = Shoppe::Product.root.find_by_permalink!(params[:permalink])
-      @quantity = params['quantity'] || 1
-      current_order.order_items.add_item(@product, @quantity.to_i)
+      @quantity = params['quantity'].to_i
+      raise Shoppe::Errors::NotEnoughStock unless quantity_valid?
+      current_order.order_items.add_item(@product, @quantity)
       flash[:success] = "#{@quantity} x #{@product.name} has been added to basket!"
       redirect_to product_path(@product.permalink)
     rescue Shoppe::Errors::NotEnoughStock => e
@@ -21,5 +22,13 @@ class ProductsController < ApplicationController
       flash[:alert] = "Sorry, an error has occured. Please contact musiccramsessions@gmail.com for help."
       redirect_to product_path(@product.permalink)
     end
+  end
+
+  private
+
+  def quantity_valid?
+    stock = @product.stock
+    return false if stock < 1
+    @quantity.between?(1, stock)
   end
 end
