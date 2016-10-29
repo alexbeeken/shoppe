@@ -1,7 +1,6 @@
 <table width='100%' border='1' class='table table-bordered'>
   <thead>
     <tr>
-      <td>Select</td>
       <td>Quantity</td>
       <td>Product</td>
       <td>Sub-Total</td>
@@ -12,12 +11,19 @@
   <tbody>
     <% order.order_items.each do |item| %>
     <tr>
-      <td><%= link_to 'remove', basket_path(id: item.id), method: 'patch', class: 'btn btn-primary' %></td>
-      <td><%= item.quantity %></td>
-      <td><%= item.ordered_item.full_name %></td>
+      <td><%= item.quantity %> x <%= number_to_currency item.unit_cost_price %>
+        <div class='remove_button'>
+          <%= link_to 'remove', basket_path(id: item.id), method: 'patch', class: 'btn btn-primary' %>
+        </div>
+      </td>
+      <td>
+        <%= item.ordered_item.full_name %>
+      </td>
       <td><%= number_to_currency item.sub_total %></td>
       <td><%= number_to_currency item.tax_amount %></td>
-      <td><%= number_to_currency item.total %></td>
+      <td>
+        <%= number_to_currency item.total %>
+      </td>
     </tr>
     <tr>
     <% end %>

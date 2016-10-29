@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   delete "basket", to: "orders#destroy"
   get "basket", to: "orders#show"
+  patch 'basket', to: 'orders#remove_item', as: 'remove_item'
 
   match "checkout", to: "orders#checkout", as: "checkout", via: [:get, :patch]
   match "checkout/pay", to: "orders#payment", as: "checkout_payment", via: [:get, :post]
