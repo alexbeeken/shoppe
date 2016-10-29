@@ -38,11 +38,8 @@
   height: 100%;
 }
 
-.product-bubble {
+.thumbnail {
   text-align: center;
-  height: 360px;
-}
-
-.product-image img {
-  max-height: 200px;
+  max-height: 80%;
+  max-width: 80%;
 }

@@ -5,6 +5,11 @@ class OrdersController < ApplicationController
     @order = Shoppe::Order.find(current_order.id)
   end
 
+  def add
+    @product = Shoppe::Product.root.find_by_permalink!(params[:permalink])
+    current_order.order_items.add_item(@product, 1)
+  end
+
   def checkout
     @order = Shoppe::Order.find(current_order.id)
     if request.patch?

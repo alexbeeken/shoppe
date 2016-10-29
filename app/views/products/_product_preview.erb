@@ -1,13 +1,1 @@
-<div class="jumbotron product-bubble">
-  <h4>
-    <%= link_to product.name, product_path(product.permalink) %>
-  </h4>
-    <% if product.default_image %>
-      <div class="product-image">
-        <%= image_tag product.default_image.path, :width => '200px', :style => "float:right" %>
-      </div>
-    <% end %>
-  <p>
-    <%= number_to_currency product.price %>
-  </p>
-</div>
+<%= link_to image_tag(product.default_image.path, class: 'thumbnail'), product_path(product.permalink) %>
