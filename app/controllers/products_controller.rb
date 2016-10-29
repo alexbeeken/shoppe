@@ -9,7 +9,8 @@ class ProductsController < ApplicationController
 
   def buy
     @product = Shoppe::Product.root.find_by_permalink!(params[:permalink])
-    current_order.order_items.add_item(@product, 1)
+    @quantity = params['quantity'] || 1
+    current_order.order_items.add_item(@product, @quantity.to_i)
     redirect_to merch_path, :notice => "Product has been added successfuly!"
   end
 end
