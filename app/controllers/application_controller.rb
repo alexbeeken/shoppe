@@ -21,6 +21,9 @@ class ApplicationController < ActionController::Base
     )
   end
 
-  helper_method :current_order, :has_order?
+  def reset_basket
+    @current_order = Shoppe::Order.create(:ip_address => request.ip)
+  end
 
+  helper_method :current_order, :has_order?, :reset_basket
 end

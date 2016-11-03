@@ -1,15 +1,5 @@
 class OrdersController < ApplicationController
   before_filter(only: [:paypal, :payment]) { Shoppe::Paypal.setup_paypal }
-
-  def checkout
-    @order = Shoppe::Order.find(current_order.id)
-    if request.patch?
-      if @order.proceed_to_confirm(params[:order].permit(:first_name, :last_name, :billing_address1, :billing_address2, :billing_address3, :billing_address4, :billing_country_id, :billing_postcode, :email_address, :phone_number))
-        redirect_to checkout_payment_path
-      end
-    end
-  end
-
   def remove_item
     Shoppe::OrderItem.find(params[:id]).remove
     redirect_to basket_path
@@ -32,7 +22,7 @@ class OrdersController < ApplicationController
     @order = Shoppe::Order.find(current_order.id)
     if params[:success] == "true" && params[:PayerID].present?
       @order.accept_paypal_payment(params[:paymentId], params[:token], params[:PayerID])
-      @order.destroy
+      reset_basket
       render :thank_you
     end
     if request.post?

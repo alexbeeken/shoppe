@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   patch 'basket', to: 'orders#remove_item', as: 'remove_item'
 
   match "checkout", to: "orders#checkout", as: "checkout", via: [:get, :patch]
-  match "checkout/pay", to: "orders#payment", as: "checkout_payment", via: [:get, :post]
+  match "checkout/paypal", to: "orders#paypal", as: "checkout_paypal", via: [:get, :post]
+  match "checkout/payment", to: "orders#payment", as: "checkout_payment", via: [:get, :post]
   match "checkout/confirm", to: "orders#confirmation", as: "checkout_confirmation", via: [:get, :post]
 
   get "checkout/paypal", to: "orders#paypal"
