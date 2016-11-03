@@ -1,5 +1,10 @@
 <h2>Your basket</h2>
 <div class='container-fluid'>
-  <%= render 'items', :order => current_order %>
-  <p><%= button_to 'Empty basket', basket_path, :method => :delete, class: 'btn btn-primary' %></p>
+  <% if current_order.order_items.count > 0 %>
+    <%= render 'items', :order => current_order %>
+    <%= button_to 'Empty basket', basket_path, :method => :delete, class: 'btn btn-primary' %>
+    <%= button_to "Checkout with PayPal", checkout_paypal_path, class: 'btn btn-primary' %>
+  <% else %>
+    You have no items in your cart.
+  <% end %>
 </div>
