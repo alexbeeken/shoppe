@@ -1,6 +1,13 @@
 <h2>Checkout</h2>
 <%= render 'items', :order => @order %>
 
-<p><%= link_to 'Empty basket', basket_path, :method => :delete %></p>
-
-<%= link_to "Pay with PayPal", checkout_paypal_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <p><%= link_to 'Empty basket', basket_path, :method => :delete %></p>
+    </div>
+    <div class="col-md-6">
+      <%= link_to "Pay with PayPal", checkout_paypal_path %>
+    </div>
+  </div>
+</div>

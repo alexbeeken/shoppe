@@ -2,8 +2,18 @@
 <div class='container-fluid'>
   <% if current_order.order_items.count > 0 %>
     <%= render 'items', :order => current_order %>
-    <%= button_to 'Empty basket', basket_path, :method => :delete, class: 'btn btn-primary' %>
-    <%= button_to "Checkout with PayPal", checkout_paypal_path, class: 'btn btn-primary' %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <%= button_to 'Empty basket', basket_path, :method => :delete, class: 'btn btn-primary' %>
+          </br>
+        </div>
+        <div class="col-md-6">
+          <%= button_to "Checkout with PayPal", checkout_paypal_path, class: 'btn btn-primary' %>
+          </br>
+        </div>
+      </div>
+    </div>
   <% else %>
     You have no items in your cart.
   <% end %>

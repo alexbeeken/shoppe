@@ -15,7 +15,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class='nav navbar-nav navbar-right'>
         <li <%= "class='active'" if @store_active %>>
-          <%= link_to 'store', '/merch', class: 'store-text' %>
+          <%= link_to '/merch' do %>
+            <font class='store-text'>
+              <p>store</p>
+            </font>
+          <% end %>
         </li>
         <li <%= "class='active'" if @basket_active %>>
           <%= render 'layouts/current_order', current_order: current_order %>
