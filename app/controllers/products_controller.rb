@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   def index
+    @store_active = true
     @products = Shoppe::Product.root.ordered.includes(:product_categories, :variants)
   end
 

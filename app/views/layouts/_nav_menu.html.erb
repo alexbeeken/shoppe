@@ -13,15 +13,13 @@
         <span class="icon-bar"></span>
     </button>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li>
+      <ul class='nav navbar-nav'>
+        <li <%= "class='active'" if @store_active %>>
           <%= link_to 'Store', '/merch' %>
         </li>
-        <% if current_order %>
-          <li>
-            <%= render 'layouts/current_order', current_order: current_order %>
-          </li>
-        <% end %>
+        <li <%= "class='active'" if @basket_active %>>
+          <%= render 'layouts/current_order', current_order: current_order %>
+        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
