@@ -16,7 +16,15 @@
  */
 
 .greenmoney {
-  color: green
+  font-family: 'Meera Inimai', sans-serif;
+  color: green;
+  font-size: 25px;
+}
+
+.store-text {
+  font-family: 'Oswald', cursive;
+  font-size: 40px;
+  color: white;
 }
 
 .banner {
@@ -35,6 +43,7 @@
 }
 
 .navbar-right {
+  padding-top: 30px;
   height: 100%;
 }
 
@@ -46,4 +55,13 @@
 
 .remove_button {
   float: right;
+}
+
+.active {
+  background-color: yellow;
+}
+
+.store-icon {
+  max-width: 20px;
+  max-height: 30px;
 }

@@ -13,9 +13,9 @@
         <span class="icon-bar"></span>
     </button>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class='nav navbar-nav'>
+      <ul class='nav navbar-nav navbar-right'>
         <li <%= "class='active'" if @store_active %>>
-          <%= link_to 'Store', '/merch' %>
+          <%= link_to 'store', '/merch', class: 'store-text' %>
         </li>
         <li <%= "class='active'" if @basket_active %>>
           <%= render 'layouts/current_order', current_order: current_order %>
