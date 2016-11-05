@@ -9,7 +9,7 @@
           </br>
         </div>
         <div class="col-md-6">
-          <%= button_to "Checkout with PayPal", checkout_paypal_path, class: 'btn btn-primary' %>
+          <%= button_to "Continue to Checkout", checkout_payment_path(order_id: current_order.id), class: 'btn btn-primary' %>
           </br>
         </div>
       </div>
