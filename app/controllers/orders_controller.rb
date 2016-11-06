@@ -18,6 +18,10 @@ class OrdersController < ApplicationController
     end
   end
 
+  def shipping_form
+    @order = Shoppe::Order.find(session[:order_id])
+  end
+
   def payment
     @order = Shoppe::Order.find(current_order.id)
     if params[:success] == "true" && params[:PayerID].present?
@@ -32,7 +36,25 @@ class OrdersController < ApplicationController
 
   def paypal
     @order = Shoppe::Order.find(session[:order_id])
+    @order.update(order_params)
     url = @order.redirect_to_paypal(checkout_payment_url(success: true), checkout_payment_url(success: false))
     redirect_to url
+  end
+
+  private
+
+  def order_params
+    params.require(:order).permit(
+      :first_name,
+      :last_name,
+      :billing_address1,
+      :billing_address2,
+      :billing_address3,
+      :billing_address4,
+      :billing_postcode,
+      :billing_country_id,
+      :email_address,
+      :phone_number
+    )
   end
 end
