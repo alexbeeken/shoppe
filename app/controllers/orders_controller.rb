@@ -23,6 +23,8 @@ class OrdersController < ApplicationController
     if params[:success] == "true" && params[:PayerID].present?
       @order.accept_paypal_payment(params[:paymentId], params[:token], params[:PayerID])
       redirect_to checkout_confirmation_path
+    else
+      redirect_to basket_path, alert: 'Something went wrong with your payment. You have not been charged. Please try again.'
     end
   end
 

@@ -1,0 +1,19 @@
+<table width='100%' border='1' class='table table-bordered'>
+  <thead>
+    <tr>
+      <td>Shipping Address</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <% current_order.full_name %>
+        <% current_order.delivery_address1 %>
+        <% current_order.delivery_address2 %>
+        <% current_order.delivery_address3 %>
+        <% current_order.delivery_address4 %>
+        <% current_order.delivery_postcode %>
+        <% current_order.delivery_country_id %>
+      </td>
+    </tr>
+</table>
