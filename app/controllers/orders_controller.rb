@@ -31,7 +31,6 @@ class OrdersController < ApplicationController
 
   def paypal
     @order = Shoppe::Order.find(session[:order_id])
-    @order.update(order_params)
     url = @order.redirect_to_paypal(checkout_payment_url(success: true), checkout_payment_url(success: false))
     redirect_to url
   end
