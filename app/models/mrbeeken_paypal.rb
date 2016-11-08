@@ -19,7 +19,8 @@ class MrbeekenPaypal
       billing_address3: 'N/A',
       billing_address4: 'N/A',
       billing_postcode: 'N/A',
-      billing_country: Shoppe::Country.last
+      billing_country: Shoppe::Country.last,
+      phone_number: '555-555-5555'
     )
   end
 end
