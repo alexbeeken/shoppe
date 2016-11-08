@@ -22,6 +22,7 @@ class OrdersController < ApplicationController
     @order = Shoppe::Order.find(session[:order_id])
     if params[:success] == "true" && params[:PayerID].present?
       @order.accept_paypal_payment(params[:paymentId], params[:token], params[:PayerID])
+      MrbeekenPaypal.process_shipping_info(@order, params[:paymentId])
       redirect_to checkout_confirmation_path
     else
       redirect_to basket_path, alert: 'Something went wrong with your payment. You have not been charged. Please try again.'
@@ -30,7 +31,12 @@ class OrdersController < ApplicationController
 
   def paypal
     @order = Shoppe::Order.find(session[:order_id])
+    @order.update(order_params)
     url = @order.redirect_to_paypal(checkout_payment_url(success: true), checkout_payment_url(success: false))
     redirect_to url
+  end
+
+  def shipping_info
+    @order = Shoppe::Order.find(session[:order_id])
   end
 end
