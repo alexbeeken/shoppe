@@ -23,6 +23,7 @@ class OrdersController < ApplicationController
     if params[:success] == "true" && params[:PayerID].present?
       @order.accept_paypal_payment(params[:paymentId], params[:token], params[:PayerID])
       MrbeekenPaypal.process_shipping_info(@order, params[:paymentId])
+      Shipment.create(@order)
       redirect_to checkout_confirmation_path
     else
       redirect_to basket_path, alert: 'Something went wrong with your payment. You have not been charged. Please try again.'
