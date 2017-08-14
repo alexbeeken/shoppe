@@ -10,18 +10,18 @@
       <section class='short_description'>
         <p><%= @product.short_description %></p>
       </section>
+      <section class='price'
+      <b><%= number_to_currency @product.price %></b>
+    </section>
     </section>
   </section>
   <section class='form'>
-    <p>
-      <b><%= number_to_currency @product.price %></b>
-    </p>
-    <section class='order-button'>
-      <%= form_tag product_path do %>
-        <%= label_tag :quantity %>
-        <%= number_field_tag 'quantity', 1, min: 1 %>
-        <%= submit_tag "Add to Basket", class: "btn btn-large btn-primary" %>
-      <% end %>
-    </section>
+    <%= form_tag product_path do %>
+      <%= label_tag :quantity %>
+      <%= number_field_tag 'quantity', 1, min: 1, class: 'quantity-option' %>
+      <section class='order'>
+        <%= submit_tag "Add to Basket", class: 'btn btn-large btn-primary' %>
+      </section>
+    <% end %>
   </section>
 </section>
