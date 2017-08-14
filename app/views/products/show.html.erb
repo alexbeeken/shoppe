@@ -1,22 +1,27 @@
-<div class='row'>
-  <div class='col-md-6'>
-  <h2><%= @product.name %></h2>
-  <div class='col-md-6'>
+<section class='show'>
+  <section class='image'>
     <% if @product.default_image %>
     <%= image_tag @product.default_image.path, :width => '200px', :style => "float:right" %>
     <% end %>
-  </div>
-  <div class='col-md-4'>
-    <p><%= @product.short_description %></p>
-  </div>
-  <div class='col-md-4'>
+  </section>
+  <section class='name-spacer'>
+    <section class='name'>
+      <h2><%= @product.name %></h2>
+      <section class='short_description'>
+        <p><%= @product.short_description %></p>
+      </section>
+    </section>
+  </section>
+  <section class='form'>
     <p>
       <b><%= number_to_currency @product.price %></b>
     </p>
-    <%= form_tag product_path do %>
-      <%= label_tag :quantity %>
-      <%= number_field_tag 'quantity', 1, min: 1 %>
-      <%= submit_tag "Add to Basket", class: "btn btn-large btn-primary" %>
-    <% end %>
-  </div>
-</div>
+    <section class='order-button'>
+      <%= form_tag product_path do %>
+        <%= label_tag :quantity %>
+        <%= number_field_tag 'quantity', 1, min: 1 %>
+        <%= submit_tag "Add to Basket", class: "btn btn-large btn-primary" %>
+      <% end %>
+    </section>
+  </section>
+</section>

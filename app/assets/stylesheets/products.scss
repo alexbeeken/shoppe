@@ -5,7 +5,44 @@
   width: 300px;
   height: 200px;
   object-fit: contain;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   &:hover {
     box-shadow: 2px 2px 2px 2px #8a9296;
+  }
+  .name {
+    text-align: left;
+  }
+  .image {
+    width: 100%;
+  }
+}
+
+.show {
+  margin: 20px;
+  .name-spacer {
+    width: 50%;
+    float: left;
+    padding: 0px 0px 20px 20px;
+    .name {
+      text-align: left;
+      float: left;
+    }
+  }
+  .description {
+    width: 100%;
+    text-align: center;
+  }
+  .image {
+    width: 50%;
+    float: left;
+    img {
+      width: 100%;
+    }
+  }
+  .form {
+    float: right;
   }
 }
