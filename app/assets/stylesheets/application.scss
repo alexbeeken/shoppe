@@ -15,6 +15,18 @@
  *= require bootstrap_and_overrides
  */
 
+ @media only screen and (max-width: 400px) {
+   .banner img {
+     max-width: 300px;
+   }
+ }
+@media only screen and (max-width: 579px) {
+  .navbar-collapse {
+    width: 100%;
+    border-color: transparent;
+  }
+}
+
 .greenmoney {
   font-family: 'Meera Inimai', sans-serif;
   font-size: 25px;

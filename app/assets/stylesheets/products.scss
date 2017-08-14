@@ -14,11 +14,13 @@
   }
   .name {
     text-align: left;
+    font-family: sans-serif;
   }
   .image {
     width: 100%;
     img {
       border-radius: 5px;
+      max-height: 150px;
     }
   }
 }
@@ -44,8 +46,8 @@
     img {
       float: left !important;
       border-radius: 10px;
-      width: 100%;
       max-width: 600px;
+      width: 100%;
       align: left;
     }
   }
@@ -65,6 +67,20 @@
     .order {
       text-align: center;
       width: 200px;
+      float: left;
+    }
+  }
+  @media only screen and (min-width: 500px) {
+    .form {
+      width: 50%;
+      float: left;
+    }
+    .image {
+      width: 50%;
+      float: left;
+    }
+    .name-spacer {
+      width: 50%;
       float: left;
     }
   }
