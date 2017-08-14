@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   mount Shoppe::Engine => "/shoppe"
   root to: 'products#index'
   get '/merch', to: 'products#index'
+  get '/about', to: 'about#index'
 
   get "product/:permalink", to: "products#show", as: "product"
   post "product/:permalink", to: "products#buy", as: "buy"
