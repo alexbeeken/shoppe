@@ -50,18 +50,22 @@
     }
   }
   .form {
-    max-width: 500px;
+    width: 100%;
     padding: 20px;
     float: left;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     .quantity-option {
       width: 43px;
+      margin-bottom: 20px;
+      float: left;
     }
-    .label {
+    .qlabel {
+      width: 80px;
+      float: left;
     }
     .order {
+      text-align: center;
+      width: 200px;
+      float: left;
     }
   }
 }
