@@ -17,6 +17,38 @@
   text-align: center;
 }
 
-.text, .title {
+.text, .title, .videos-message, .support-message, .feed {
   font-family: 'Oswald';
+}
+
+.videos {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  .video {
+    max-height: 500px;
+    margin-bottom: 40px;
+    margin: 10px;
+  }
+  iframe {
+
+  }
+}
+
+.videos-message {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.post {
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+}
+.post-body p {
+  font-size: 18px !important;
+}
+.post-date p {
+  font-size: 13px !important;
 }

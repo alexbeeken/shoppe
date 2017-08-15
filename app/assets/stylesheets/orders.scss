@@ -1,3 +1,35 @@
 // Place all the styles related to the orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.arrows {
+  width: 100%;
+  .back-arrow {
+    float: left;
+    width: 50%;
+    font-size: 20px;
+  }
+  .checkout-arrow {
+    float: right;
+    width: 49%;
+    font-size: 20px;
+    a {
+      float: right;
+    }
+  }
+  margin-bottom: 50px;
+}
+
+.current-cart {
+  margin-top: 50px;
+  width: 100%;
+  .item {
+    background-color: #fff059;
+  }
+  .remove_button {
+    font-size: 15px;
+  }
+  .empty_cart {
+    font-size: 30px;
+  }
+}

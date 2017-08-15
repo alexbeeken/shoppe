@@ -1,5 +1,14 @@
 class AboutController < ApplicationController
 
-  def index
+  def me
+  end
+
+  def videos
+  end
+
+  def support
+  end
+
+  def news
   end
 end

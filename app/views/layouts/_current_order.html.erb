@@ -5,11 +5,9 @@
   <%= flash[:notice] %>
   <%= link_to "Checkout", checkout_path %>
 </p> -->
-
-
 <%= link_to basket_path do %>
   <article class='cart'>
-    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
     <font class="greenmoney">
       <%= number_to_currency current_order.total %>
     </font>

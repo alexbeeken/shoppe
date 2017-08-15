@@ -14,48 +14,32 @@
  *= require_self
  *= require bootstrap_and_overrides
  */
-
- @media only screen and (max-width: 491px) {
+ @media only screen and (max-width: 1350px) {
    .banner img {
      width: 100%;
    }
+   .nav-links {
+     float: left !important;
+   }
  }
+
+@media only screen and (max-width: 491px) {
+ .banner img {
+   width: 100%;
+ }
+}
 @media only screen and (max-width: 579px) {
   .nav-link {
     font-size: 8px !important;
-    .greenmoney {
-      font-size: 13px;
-    }
     .nav-text {
       font-size: 13px;
-    }
-    .cart {
-      padding-top: 5px !important;
     }
   }
   .nav-links {
     width: 100% !important;
     padding-left: 0px !important;
+    padding-top: 0px !important;
   }
-  .social {
-    .pat-img img {
-      border-radius: 2px !important;
-      width: 20px !important;
-      height: 20px !important;
-    }
-    .yut-img {
-      img {
-        border-radius: 2px !important;
-        width: 20px !important;
-      }
-    }
-  }
-}
-
-.greenmoney {
-  font-family: 'Meera Inimai', sans-serif;
-  font-size: 3vw;
-  color: green;
 }
 
 .nav-text {
@@ -95,7 +79,6 @@
   float: left;
   margin-right: 20px;
   .cart {
-    padding-top: 20px;
     float: left;
   }
   a {
@@ -120,23 +103,6 @@
 .store-icon {
   max-width: 20px;
   max-height: 30px;
-}
-
-.social {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .pat-img img {
-    border-radius: 5px;
-    width: 30px;
-    height: 30px;
-  }
-  .yut-img {
-    img {
-      border-radius: 5px;
-      width: 30px;
-    }
-  }
 }
 
 .jumbotron {

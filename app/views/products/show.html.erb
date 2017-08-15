@@ -1,3 +1,19 @@
+<section class='arrows'>
+  <section class='back-arrow'>
+    <%= link_to '/merch' do %>
+      <icon class='fa fa-arrow-left'> back</i>
+    <% end %>
+  </section>
+  <section class='checkout-arrow'>
+    <article class='shopping-cart'>
+      <%= link_to basket_path do %>
+      <icon class='fa fa-arrow-right'></i>
+        <% end %>
+      <%= render 'layouts/current_order', current_order: current_order %>
+    </article>
+  </section>
+</section>
+<hr>
 <section class='show'>
   <section class='image'>
     <% if @product.default_image %>

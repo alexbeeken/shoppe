@@ -1,3 +1,18 @@
+<section class='arrows'>
+  <section class='back-arrow'>
+    <%= link_to '/merch' do %>
+    <% end %>
+  </section>
+  <section class='checkout-arrow'>
+    <article class='shopping-cart'>
+      <%= link_to basket_path do %>
+      <icon class='fa fa-arrow-right'></i>
+        <% end %>
+      <%= render 'layouts/current_order', current_order: current_order %>
+    </article>
+  </section>
+</section>
+<hr>
 <div class="container-fluid">
   <% @products.each_slice(4) do |row| %>
     <%= render 'products/product_row', row: row %>

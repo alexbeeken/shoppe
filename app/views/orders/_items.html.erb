@@ -10,22 +10,25 @@
   </thead>
   <tbody>
     <% order.order_items.each do |item| %>
-    <tr>
-      <td><%= item.quantity %> x <%= number_to_currency item.unit_cost_price %>
-        <div class='remove_button'>
-          <%= link_to 'remove', basket_path(id: item.id), method: 'patch', class: 'btn btn-primary' %>
-        </div>
-      </td>
-      <td>
-        <%= item.ordered_item.full_name %>
-      </td>
-      <td><%= number_to_currency item.sub_total %></td>
-      <td><%= number_to_currency item.tax_amount %></td>
-      <td>
-        <%= number_to_currency item.total %>
-      </td>
-    </tr>
-    <tr>
+      <tr class='item'>
+        <td class='item-row'>
+          <div class='remove_button'>
+            <%= link_to basket_path(id: item.id), method: 'patch' do %>
+              <icon class='fa fa-times'></icon>
+            <% end %>
+          </div>
+          <%= item.quantity %> x <%= number_to_currency item.unit_cost_price %>
+        </td>
+        <td class='item-row'>
+          <%= item.ordered_item.full_name %>
+        </td>
+        <td class='item-row'><%= number_to_currency item.sub_total %></td>
+        <td><%= number_to_currency item.tax_amount %></td>
+        <td class='item-row'>
+          <%= number_to_currency item.total %>
+        </td>
+      </tr>
+      <tr>
     <% end %>
 
     <% if order.delivery_service %>
@@ -37,7 +40,6 @@
       <td><%= number_to_currency order.delivery_price + order.delivery_tax_amount %></td>
     </tr>
     <% end %>
-
   </tbody>
   <tfoot>
     <tr>

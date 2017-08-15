@@ -8,45 +8,13 @@
     <nav>
       <section class='mrb-navbar'>
         <section class='nav-links'>
-          <article class='nav-link'>
-            <%= link_to '/about' do %>
-              <font class='nav-text'>
-                <p><i class='fa fa-info-circle'></i>about</p>
-              </font>
-            <% end %>
-          </article>
-          <article class='nav-link'>
-            <%= link_to '/merch' do %>
-              <font class='nav-text'>
-                <p><i class='fa fa-star'></i>store</p>
-              </font>
-            <% end %>
-          </article>
-          <article class='nav-link social'>
-            <article class='yut-img'>
-              <%= image_tag "youtube.png" %>
-            </article>
-            <%= link_to 'https://www.youtube.com/channel/UCtZ04kW3xThhfO4PCfvGaNQ' do %>
-              <font class='nav-text'>
-                <p>youtube</p>
-              </font>
-            <% end %>
-          </article>
-          <article class='nav-link social'>
-            <article class='pat-img'>
-              <%= image_tag "patreon.png" %>
-            </article>
-            <%= link_to 'https://patreon.com/mrbeeken' do %>
-              <font class='nav-text'>
-                <p>patreon</p>
-              </font>
-            <% end %>
-          </article>
-          <article class='nav-link'>
-            <section <%= "class='active'" if @basket_active %>>
-              <%= render 'layouts/current_order', current_order: current_order %>
-            </section>
-          </article>
+          <section <%= "class='active'" if @basket_active %>>
+          </section>
+          <%= render 'layouts/nav_link', path: '/news', icon: 'fa fa-newspaper-o', text: 'news' %>
+          <%= render 'layouts/nav_link', path: '/videos', icon: 'fa fa-video-camera', text: 'videos' %>
+          <%= render 'layouts/nav_link', path: '/merch', icon: 'fa fa-star', text: 'store' %>
+          <%= render 'layouts/nav_link', path: '/about', icon: 'fa fa-info-circle', text: 'about' %>
+          <%= render 'layouts/nav_link', path: '/support', icon: 'fa fa-life-ring', text: 'support' %>
         </section>
       </section>
     </nav><!-- /.navbar-collapse -->
