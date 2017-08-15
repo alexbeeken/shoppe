@@ -108,3 +108,22 @@
   max-width: 20px;
   max-height: 30px;
 }
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  .pat-img img {
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+  }
+  .yut-img {
+
+    img {
+      border-radius: 5px;
+      width: 30px;
+    }
+  }
+}

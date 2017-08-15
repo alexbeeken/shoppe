@@ -22,6 +22,26 @@
             </font>
             <% end %>
           </article>
+          <article class='nav-link social'>
+            <%= link_to 'https://www.patreon.com' do %>
+            <font class='nav-text'>
+              <p>youtube</p>
+            </font>
+            <% end %>
+            <article class='yut-img'>
+              <img src='youtube.png'>
+            </article>
+          </article>
+          <article class='nav-link social'>
+            <%= link_to 'https://www.patreon.com' do %>
+            <font class='nav-text'>
+              <p>patreon</p>
+            </font>
+            <% end %>
+            <article class='pat-img'>
+              <img src='patreon.png'>
+            </article>
+          </article>
           <article class='nav-link'>
             <section <%= "class='active'" if @basket_active %>>
               <%= render 'layouts/current_order', current_order: current_order %>
