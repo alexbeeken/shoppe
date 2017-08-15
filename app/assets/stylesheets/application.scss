@@ -86,7 +86,7 @@
 }
 
 .nav-links {
-  width: 800px;
+  width: 900px;
   float: right;
   padding-top: 30px;
   padding-left: 30px;
@@ -138,4 +138,9 @@
       width: 30px;
     }
   }
+}
+
+.jumbotron {
+  border-radius: 10px;
+  margin: 20px;
 }
