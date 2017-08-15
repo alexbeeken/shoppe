@@ -11,36 +11,36 @@
           <article class='nav-link'>
             <%= link_to '/about' do %>
             <font class='nav-text'>
-              <p>about</p>
+              <p><i class='fa fa-info-circle'></i>about</p>
             </font>
             <% end %>
           </article>
           <article class='nav-link'>
             <%= link_to '/merch' do %>
             <font class='nav-text'>
-              <p>store</p>
+              <p><i class='fa fa-star'></i>store</p>
             </font>
             <% end %>
           </article>
           <article class='nav-link social'>
-            <%= link_to 'https://www.patreon.com' do %>
+            <article class='yut-img'>
+              <img src='youtube.png'>
+            </article>
+            <%= link_to 'https://www.youtube.com/channel/UCtZ04kW3xThhfO4PCfvGaNQ' do %>
             <font class='nav-text'>
               <p>youtube</p>
             </font>
             <% end %>
-            <article class='yut-img'>
-              <img src='youtube.png'>
-            </article>
           </article>
           <article class='nav-link social'>
-            <%= link_to 'https://www.patreon.com' do %>
+            <article class='pat-img'>
+              <img src='patreon.png'>
+            </article>
+            <%= link_to 'https://patreon.com/mrbeeken' do %>
             <font class='nav-text'>
               <p>patreon</p>
             </font>
             <% end %>
-            <article class='pat-img'>
-              <img src='patreon.png'>
-            </article>
           </article>
           <article class='nav-link'>
             <section <%= "class='active'" if @basket_active %>>

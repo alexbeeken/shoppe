@@ -24,10 +24,10 @@
   .nav-link {
     font-size: 10px !important;
     .greenmoney {
-      font-size: 20px;
+      font-size: 15px;
     }
     .nav-text {
-      font-size: 20px;
+      font-size: 15px;
     }
     .cart {
       padding-top: 5px !important;
@@ -35,6 +35,20 @@
   }
   .nav-links {
     width: 100% !important;
+    padding-left: 0px !important;
+  }
+  .social {
+    .pat-img img {
+      border-radius: 2px !important;
+      width: 20px !important;
+      height: 20px !important;
+    }
+    .yut-img {
+      img {
+        border-radius: 2px !important;
+        width: 20px !important;
+      }
+    }
   }
 }
 
@@ -72,10 +86,10 @@
 }
 
 .nav-links {
-  width: 50%;
+  width: 800px;
   float: left;
   padding-top: 30px;
-  padding-left: 80px;
+  padding-left: 30px;
 }
 
 .nav-link {
@@ -113,14 +127,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 30px;
   .pat-img img {
     border-radius: 5px;
     width: 30px;
     height: 30px;
   }
   .yut-img {
-
     img {
       border-radius: 5px;
       width: 30px;
