@@ -1,3 +1,10 @@
+<div class="container-fluid">
+  <% @products.each_slice(4) do |row| %>
+    <%= render 'products/product_row', row: row %>
+  <% end %>
+  </div>
+</div>
+<hr>
 <section class='arrows'>
   <section class='back-arrow'>
     <%= link_to '/merch' do %>
@@ -12,10 +19,3 @@
     </article>
   </section>
 </section>
-<hr>
-<div class="container-fluid">
-  <% @products.each_slice(4) do |row| %>
-    <%= render 'products/product_row', row: row %>
-  <% end %>
-  </div>
-</div>
