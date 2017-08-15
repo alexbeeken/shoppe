@@ -8,8 +8,10 @@
 
 
 <%= link_to basket_path do %>
-  <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-  <font class="greenmoney">
-    <%= number_to_currency current_order.total %>
-  </font>
+  <article class='cart'>
+    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+    <font class="greenmoney">
+      <%= number_to_currency current_order.total %>
+    </font>
+  </article>
 <% end %>

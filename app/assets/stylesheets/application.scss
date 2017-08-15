@@ -17,13 +17,24 @@
 
  @media only screen and (max-width: 491px) {
    .banner img {
-     max-width: 300px;
+     width: 100%;
    }
  }
 @media only screen and (max-width: 579px) {
-  .navbar-collapse {
-    width: 100%;
-    border-color: transparent;
+  .nav-link {
+    font-size: 10px !important;
+    .greenmoney {
+      font-size: 20px;
+    }
+    .nav-text {
+      font-size: 20px;
+    }
+    .cart {
+      padding-top: 5px !important;
+    }
+  }
+  .nav-links {
+    width: 100% !important;
   }
 }
 
@@ -51,22 +62,32 @@
   float: left;
 }
 
+.cart {
+  display: flex;
+  flex-direction: row;
+}
+
 .navbar {
   background-color: #abcfe7;
 }
 
 .nav-links {
   width: 50%;
-  float: right;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: space-between;
+  float: left;
+  padding-top: 30px;
+  padding-left: 80px;
 }
 
 .nav-link {
-  float: right;
+  float: left;
   margin-right: 20px;
+  .cart {
+    padding-top: 20px;
+    float: left;
+  }
+  a {
+    text-decoration: none;
+  }
 }
 
 .thumbnail {
