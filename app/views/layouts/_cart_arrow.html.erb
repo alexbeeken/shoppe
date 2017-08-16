@@ -1,0 +1,8 @@
+<section class='checkout-arrow'>
+  <article class='shopping-cart'>
+    <%= link_to basket_path do %>
+      <icon class='fa fa-arrow-right'></i>
+    <% end %>
+    <%= render 'layouts/current_order', current_order: current_order %>
+  </article>
+</section>

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   mount Shoppe::Engine => "/shoppe"
   root to: 'products#index'
-  get '/merch', to: 'products#index'
+  get '/store', to: 'products#index'
   get '/about', to: 'about#me'
   get '/videos', to: 'about#videos'
   get '/support', to: 'about#support'

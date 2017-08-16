@@ -10,14 +10,6 @@
 </section>
 <hr>
 <section class='arrows'>
-  <section class='back-arrow'>
-    <%= link_to '/store' do %>
-      <icon class='fa fa-arrow-left'> back</i>
-    <% end %>
-  </section>
-  <section class='checkout-arrow'>
-    <%= link_to checkout_paypal_path do %>
-      <icon class='fa fa-arrow-right'> checkout</i>
-    <% end %>
-  </section>
+  <%= render 'layouts/back_arrow' %>
+  <%= render 'layouts/checkout' %>
 </section>

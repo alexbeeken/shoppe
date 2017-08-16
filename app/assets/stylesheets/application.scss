@@ -14,6 +14,16 @@
  *= require_self
  *= require bootstrap_and_overrides
  */
+@font-face {
+  font-family: 'Oswald';
+  src: url(fonts/Oswald/Oswald-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Meera Inimai';
+  src: url(fonts/Meera_Inimai/MeeraInimai-Regular.ttf) format('truetype');
+}
+
  @media only screen and (max-width: 1350px) {
    .banner img {
      width: 100%;
