@@ -1,0 +1,11 @@
+<section class='form'>
+  <%= form_tag product_path do %>
+    <section class='qlabel'>
+      <p> Quantity <p>
+    </section>
+    <%= number_field_tag 'quantity', 1, min: 1, class: 'quantity-option' %>
+    <section class='order'>
+      <%= submit_tag "Add to Basket", class: 'btn btn-large btn-primary' %>
+    </section>
+  <% end %>
+</section>

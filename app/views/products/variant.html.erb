@@ -1,0 +1,35 @@
+<section class='arrows'>
+  <%= render 'layouts/back_arrow' %>
+  <%= render 'layouts/cart_arrow', current_order: current_order %>
+</section>
+<hr>
+<section class='show'>
+  <section class='image'>
+    <% if @variant.default_image %>
+      <%= image_tag @variant.default_image.path %>
+    <% end %>
+  </section>
+  <section class='name-spacer'>
+    <section class='name'>
+      <h2><%= @variant.parent.name %></h2>
+      <h4><%= @variant.name %></h4>
+      <section class='short_description'>
+        <p><%= @variant.short_description %></p>
+      </section>
+      <section class='price'
+      <b><%= number_to_currency @variant.price %></b>
+    </section>
+    </section>
+  </section>
+  <section class='form'>
+    <%= form_tag ('/product/' + @variant.permalink) do %>
+      <section class='qlabel'>
+        <p> Quantity <p>
+      </section>
+      <%= number_field_tag 'quantity', 1, min: 1, class: 'quantity-option' %>
+      <section class='order'>
+        <%= submit_tag "Add to Basket", class: 'btn btn-large btn-primary' %>
+      </section>
+    <% end %>
+  </section>
+</section>
