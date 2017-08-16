@@ -3,7 +3,9 @@
     <%= product.name %>
   </section>
   <section class='image'>
-    <%= link_to image_tag(product.default_image.path), product_path(product.permalink) %>
+    <% if product.default_image %>
+      <%= link_to image_tag(product.default_image.path), product_path(product.permalink) %>
+    <% end %>
   </section>
   <section class='price'>
     $ <%= product.price %>
