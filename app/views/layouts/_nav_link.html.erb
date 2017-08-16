@@ -1,6 +1,6 @@
 <article class='nav-link'>
   <%= link_to path do %>
-    <% if current_page?(controller: controller, action: action) || (controller == 'products' && controller_name == 'products') %>
+    <% if (action_name == action) || (controller == 'products' && controller_name == 'products') %>
       <article class='nav-text active-link'>
         <p>
         <article class='nav-icon'>
