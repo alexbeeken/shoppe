@@ -1,10 +1,10 @@
+<section class='arrows'>
+  <%= render 'layouts/cart_arrow', current_order: current_order %>
+</section>
+<hr>
 <div class="container-fluid">
   <% @products.each_slice(4) do |row| %>
     <%= render 'products/product_row', row: row %>
   <% end %>
   </div>
 </div>
-<hr>
-<section class='arrows'>
-  <%= render 'layouts/cart_arrow', current_order: current_order %>
-</section>
