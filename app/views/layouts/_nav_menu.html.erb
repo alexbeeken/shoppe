@@ -8,13 +8,11 @@
     <nav>
       <section class='mrb-navbar'>
         <section class='nav-links'>
-          <section <%= "class='active'" if @basket_active %>>
-          </section>
-          <%= render 'layouts/nav_link', path: '/news', icon: 'fa fa-newspaper-o', text: 'news' %>
-          <%= render 'layouts/nav_link', path: '/videos', icon: 'fa fa-video-camera', text: 'videos' %>
-          <%= render 'layouts/nav_link', path: '/store', icon: 'fa fa-star', text: 'store' %>
-          <%= render 'layouts/nav_link', path: '/about', icon: 'fa fa-info-circle', text: 'about' %>
-          <%= render 'layouts/nav_link', path: '/support', icon: 'fa fa-heart', text: 'support' %>
+          <%= render 'layouts/nav_link', path: '/news', icon: 'fa fa-newspaper-o', text: 'news', controller: 'about', action: 'news' %>
+          <%= render 'layouts/nav_link', path: '/videos', icon: 'fa fa-video-camera', text: 'videos', controller: 'about', action: 'videos' %>
+          <%= render 'layouts/nav_link', path: '/store', icon: 'fa fa-star', text: 'store', controller: 'products', action: 'index' %>
+          <%= render 'layouts/nav_link', path: '/about', icon: 'fa fa-info-circle', text: 'about', controller: 'about', action: 'me' %>
+          <%= render 'layouts/nav_link', path: '/support', icon: 'fa fa-heart', text: 'support', controller: 'about', action: 'support' %>
         </section>
       </section>
     </nav><!-- /.navbar-collapse -->

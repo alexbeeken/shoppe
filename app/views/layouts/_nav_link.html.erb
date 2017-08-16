@@ -1,12 +1,23 @@
 <article class='nav-link'>
   <%= link_to path do %>
-    <font class='nav-text'>
-      <p>
+    <% if current_page?(controller: controller, action: action) || (controller == 'products' && controller_name == 'products') %>
+      <article class='nav-text active-link'>
+        <p>
         <article class='nav-icon'>
           <i class="<%= icon %>"></i>
         </article>
         <%= text %>
-      </p>
-    </font>
+        </p>
+      </article>
+    <% else %>
+      <article class='nav-text'>
+        <p>
+        <article class='nav-icon'>
+          <i class="<%= icon %>"></i>
+        </article>
+        <%= text %>
+        </p>
+      </article>
+    <% end %>
   <% end %>
 </article>
