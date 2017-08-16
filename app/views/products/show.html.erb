@@ -15,9 +15,13 @@
       <section class='short_description'>
         <p><%= @product.short_description %></p>
       </section>
-      <section class='price'
-      <b><%= number_to_currency @product.price %></b>
-    </section>
+      <section class='price'>
+        <% if @product.price > 0 %>
+          $ <%= @product.price %>
+        <% else %>
+          $ <%= @product.variants.first.price %>
+        <% end %>
+      </section>
     </section>
   </section>
   <% if @product.variants.count > 0 %>
