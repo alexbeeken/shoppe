@@ -5,7 +5,7 @@
     </section>
     <section class='image'>
       <% if product.default_image %>
-        <%= image_tag product.default_image.path %>
+        <%= image_tag asset_url(product.default_image.path) %>
       <% end %>
     </section>
     <section class='price'>
