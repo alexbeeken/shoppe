@@ -1,13 +1,15 @@
-<article class='thumbnail'>
-  <section class='name'>
-    <%= product.name %>
-  </section>
-  <section class='image'>
-    <% if product.default_image %>
-      <%= link_to image_tag(product.default_image.path), product_path(product.permalink) %>
-    <% end %>
-  </section>
-  <section class='price'>
-    $ <%= product.price %>
-  </section>
-</article>
+<%= link_to product_path(product.permalink) do %>
+  <article class='thumbnail'>
+    <section class='name'>
+      <%= product.name %>
+    </section>
+    <section class='image'>
+      <% if product.default_image %>
+        <%= image_tag product.default_image.path %>
+      <% end %>
+    </section>
+    <section class='price'>
+      $ <%= product.price %>
+    </section>
+  </article>
+<% end %>

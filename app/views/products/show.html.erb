@@ -20,15 +20,32 @@
     </section>
     </section>
   </section>
-  <section class='form'>
-    <%= form_tag product_path do %>
-      <section class='qlabel'>
-        <p> Quantity <p>
-      </section>
-      <%= number_field_tag 'quantity', 1, min: 1, class: 'quantity-option' %>
-      <section class='order'>
-        <%= submit_tag "Add to Basket", class: 'btn btn-large btn-primary' %>
-      </section>
-    <% end %>
-  </section>
+  <% if @product.variants.count > 0 %>
+    <section class='sizes'>
+      <h4>Sizes:</h4>
+      <% @product.variants.each do |variant| %>
+        <article class='size'>
+          <% if variant.stock > 0 %>
+            <%= link_to variant.name, ('/product/' + @product.permalink + '/variant/' + variant.id.to_s) %>
+          <% else %>
+            <strike>
+              <%= variant.name %>
+            </strike>
+          <% end %>
+        </article>
+      <% end %>
+    </section>
+  <% else %>
+    <section class='form'>
+      <%= form_tag product_path do %>
+        <section class='qlabel'>
+          <p> Quantity <p>
+        </section>
+        <%= number_field_tag 'quantity', 1, min: 1, class: 'quantity-option' %>
+        <section class='order'>
+          <%= submit_tag "Add to Basket", class: 'btn btn-large btn-primary' %>
+        </section>
+      <% end %>
+    </section>
+  <% end %>
 </section>

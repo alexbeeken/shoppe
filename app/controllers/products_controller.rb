@@ -19,6 +19,14 @@ class ProductsController < ApplicationController
     end
   end
 
+  def variant
+    @product = Shoppe::Product.root.find_by_permalink(params[:permalink])
+    @variant = Shoppe::Product.find(params[:id])
+    if @variant.parent_id == nil
+      raise Shoppe::Errors::NotEnoughStock
+    end
+  end
+
   private
 
   def handle_errors(&block)

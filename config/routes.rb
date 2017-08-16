@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   mount Shoppe::Engine => "/shoppe"
-  root to: 'products#index'
+  root to: 'about#news'
   get '/store', to: 'products#index'
   get '/about', to: 'about#me'
   get '/videos', to: 'about#videos'
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/news', to: 'about#news'
 
   get "product/:permalink", to: "products#show", as: "product"
+  get "product/:permalink/variant/:id", to: 'products#variant'
   post "product/:permalink", to: "products#buy", as: "buy"
 
   delete "basket", to: "orders#destroy"

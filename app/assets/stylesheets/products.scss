@@ -20,7 +20,8 @@
     width: 100%;
     img {
       border-radius: 5px;
-      max-height: 150px;
+      max-height: 120px;
+      max-width: 100%;
     }
   }
 }
@@ -84,6 +85,17 @@
       float: left;
     }
   }
+}
+
+.size {
+  width: 100%;
+  float: left;
+}
+
+.sizes {
+  float: left;
+  padding-left: 20px;
+  width: 50%;
 }
 
 .shopping-cart {
