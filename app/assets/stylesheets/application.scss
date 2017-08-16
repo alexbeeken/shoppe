@@ -16,12 +16,12 @@
  */
 @font-face {
   font-family: 'Oswald';
-  src: asset_url(fonts/Oswald/Oswald-Regular.ttf) format('truetype');
+  src: asset_url('fonts/Oswald/Oswald-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Meera Inimai';
-  src: asset_url(fonts/Meera_Inimai/MeeraInimai-Regular.ttf) format('truetype');
+  src: asset_url('fonts/Meera_Inimai/MeeraInimai-Regular.ttf') format('truetype');
 }
 
  @media only screen and (max-width: 1350px) {
